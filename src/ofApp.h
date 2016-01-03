@@ -8,7 +8,9 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
+    void mouseScrolled(int x, int y, float scrollX, float scrollY);
     ofMesh mesh;
+    ofImage base;
   
   private:
     vector<Particle> particles;

@@ -6,17 +6,19 @@ void ofApp::setup(){
   ofSetVerticalSync(true);
   ofEnableDepthTest();
   ofEnableNormalizedTexCoords();
-  mesh.setMode(OF_PRIMITIVE_POINTS);
+  base.loadImage("rocks.jpg");
+  base.resize(width, height);
   num_particles = 1000;
   width = ofGetWidth();
   height = ofGetHeight();
   for(int i = 0; i < num_particles; i++){
-    particles.push_back(Particle(Particle(ofVec3f(ofRandom(width), ofRandom(height), ofRandom(-200, 200)))));
+    particles.push_back(Particle(ofVec3f(width/2+ofRandom(-20, 20), height/2+ofRandom(-20, 20), ofRandom(-200, 200)), &base));
   }
   ofEnableDepthTest();
   glEnable(GL_POINT_SMOOTH); // use circular points instead of square points
-  glPointSize(1);
-  ofBackground(0);
+  glPointSize(5);
+  ofBackground(255);
+  ofSetBackgroundAuto(true);
 }
 
 //--------------------------------------------------------------
@@ -36,4 +38,6 @@ void ofApp::draw(){
   cam.end();
   mesh.clear();
 }
+
+
 

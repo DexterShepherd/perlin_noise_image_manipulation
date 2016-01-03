@@ -14,15 +14,17 @@
 
 class Particle{
   public:
-    Particle(ofVec3f l);
+    Particle(ofVec3f l, ofImage* img);
     void update();
     ofVec3f display();
   private:
     bool edge_detect(ofVec3f l);
     ofVec3f loc, delta;
     float angle, step_size, noise_scale, noise_max;
+    ofImage* image;
     ofColor col;
     ofMesh shape;
+    int len;
 };
 
 #endif /* defined(__perlin_images__Particle__) */
