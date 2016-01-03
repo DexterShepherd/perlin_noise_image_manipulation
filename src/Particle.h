@@ -22,6 +22,7 @@ class Particle{
     ofVec3f loc, delta;
     float angle, step_size, noise_scale, noise_max;
     ofColor col;
+    ofMesh shape;
 };
 
 #endif /* defined(__perlin_images__Particle__) */
